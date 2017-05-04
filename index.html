@@ -11,6 +11,12 @@
             height: 9em;
             width: 9em;
             background-color: lightgray;
+            position: absolute;
+            transition-duration: 3s;
+        }
+        
+        body {
+            height: 100vh;
         }
     </style>
 </head>
@@ -19,8 +25,26 @@
     <div id="carre"> </div>
     <script>
         let body = document.body;
-        body.addEventListener("mousemove", function() {
-            console.log("game");
+        body.addEventListener("mousemove", function(mouse) {
+            let positionX = mouse.clientX;
+            let positionY = mouse.clientY;
+            console.log(positionX, positionY);
+            /*
+                    let body = document.body("carre");
+                    body.style.position = 'absolute';
+                    body.style.height = '6em';
+                    element.style.width = '6em';
+                    console.log()
+            */
+            let carre = document.querySelector("#carre");
+            console.log(carre);
+            /*
+            "#carre".style.height = "6em";
+            "#carre".style.height = "6em";
+            console.log()
+            */
+            carre.style.top = positionY + "px";
+            carre.style.left = positionX + "px";
         });
     </script>
 </body>
